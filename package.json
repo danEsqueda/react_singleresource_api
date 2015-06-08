@@ -1,0 +1,33 @@
+{
+  "name": "react_rest_api",
+  "version": "0.1.0",
+  "description": "single resoucre REST api w/React",
+  "main": "app.js",
+  "scripts": {
+    "test": "test",
+    "build": "browserify js/app.js -o public/bundle.js"
+  },
+  "keywords": [
+    "react",
+    "rest",
+    "api"
+  ],
+  "author": "Daniel Esqueda",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "chai-http": "^1.0.0"
+  },
+  "dependencies": {
+    "express": "^4.12.4",
+    "mongoose": "^4.0.4",
+    "browserify": "^10.2.3",
+    "react": "^0.13.3",
+    "reactify": "^1.1.1"
+  },
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
+  }
+}
