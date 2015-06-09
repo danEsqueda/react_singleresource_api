@@ -17,8 +17,8 @@ router.use(function(req, res, next) {
   next();
 });
 
-app.get('/runningstats/myruns', function(req, res) {
-  res.redirect('/index.html');
+app.get('/', function(req, res) {
+  res.redirect('index.html');
 });
 
 router.get('/runningstats/myruns/:name', jsonParser, function(req, res) {
