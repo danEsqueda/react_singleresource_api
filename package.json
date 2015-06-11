@@ -19,9 +19,10 @@
     "chai-http": "^1.0.0"
   },
   "dependencies": {
-    "express": "^4.12.4",
-    "mongoose": "^4.0.4",
     "browserify": "^10.2.3",
+    "express": "^4.12.4",
+    "jquery": "^2.1.4",
+    "mongoose": "^4.0.4",
     "react": "^0.13.3",
     "reactify": "^1.1.1"
   },

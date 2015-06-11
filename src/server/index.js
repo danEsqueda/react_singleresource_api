@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
 
-app.use(express.static('./public'));
+app.use(express.static('public'));
 
 mongoose.connect('mongodb://localhost:27017/runs');
 
@@ -17,16 +17,22 @@ router.use(function(req, res, next) {
   next();
 });
 
-app.get('/', function(req, res) {
-  res.redirect('index.html');
+router.get('/runningstats/myruns', jsonParser, function(req, res) {
+  Run.find(function(err, runs) {
+    if (err || runs === null) {
+      return res.status(404).json({message: 'Run Not Found'});
+    } else {
+      res.send(runs);
+    }
+  });
 });
 
 router.get('/runningstats/myruns/:name', jsonParser, function(req, res) {
   Run.findOne({name: req.params.name}, function(err, run) {
     if (err || run === null) {
-      return res.statsu(404).json({message: 'Run Not Found'});
+      return res.status(404).json({message: 'Run Not Found'});
     } else {
-      return res.status(200).json({message: 'Here Is Your Run!'});
+      res.send(run);
     }
   });
 });

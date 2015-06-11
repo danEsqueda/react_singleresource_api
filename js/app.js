@@ -6,10 +6,10 @@ var App = React.createClass({
     return (
       <main>
         <h1>Welcome to Running Stats</h1>
-        <RunContainer />
+        <RunContainer url={url} />
       </main>
     )
   }
 })
-
-React.render(<App />, document.getElementById('app'))
+var url = 'http://localhost:3000/'
+React.render(<App url={url} />, document.getElementById('app'))
